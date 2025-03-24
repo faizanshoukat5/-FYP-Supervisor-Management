@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYP Supervisor Finder</title>
+    <script defer src="./src/scripts/script.js"></script>
+    <script defer src="./src/scripts/navigation.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+
+    <h1 class="text-2xl font-bold text-center mb-5">FYP Supervisor Finder</h1>
+
+    <!-- Filter Section -->
+    <div class="flex justify-center gap-4 mb-5">
+        <input type="text" id="searchDomain" placeholder="Enter Research Domain"
+            class="border p-2 rounded shadow">
+        <button onclick="filterSupervisors()" class="bg-blue-500 text-white px-4 py-2 rounded shadow">
+            Search
+        </button>
+        <button onclick="sortSupervisors('asc')" class="bg-purple-500 text-white px-4 py-2 rounded shadow">
+            Sort ↑ (Fewest Slots)
+        </button>
+        <button onclick="sortSupervisors('desc')" class="bg-purple-700 text-white px-4 py-2 rounded shadow">
+            Sort ↓ (Most Slots)
+        </button>
+        
+    </div>
+
+    <!-- Supervisors List -->
+    <div id="supervisorList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between mt-5">
+        <button onclick="goBack()" class="bg-gray-500 text-white px-4 py-2 rounded">⬅ Back</button>
+        <button onclick="goForward()" class="bg-gray-500 text-white px-4 py-2 rounded">Next ➡</button>
+    </div>
+
+</body>
+</html>
